@@ -1,0 +1,12 @@
+{
+  "name": "next-cookie-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next"
+  },
+  "devDependencies": {
+    "next": "^8.0.0",
+    "next-cookie": "file:../"
+  }
+}
