@@ -1,11 +1,15 @@
 
 .rpt2_cache
 .editorconfig
+.github
 .gitignore
 
 example
 src
 test
+
+CHANGELOG.md
+README.md
 
 jest.config.js
 rollup.config.js
