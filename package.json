@@ -1,6 +1,6 @@
 {
   "name": "next-cookie",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -21,7 +21,6 @@
     "cookie"
   ],
   "scripts": {
-    "prepublish": "npm run build",
     "build": "rollup -c rollup.config.js",
     "lint": "tslint src/**/*.ts",
     "test": "jest --config jest.config.js --runInBand"
