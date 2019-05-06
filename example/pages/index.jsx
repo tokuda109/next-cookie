@@ -12,7 +12,7 @@ class IndexPage extends React.Component {
   static async getInitialProps(ctx) {
     const cookie = new Cookie(ctx)
 
-    // cookie.set('test', 'test')
+    cookie.set('get-initial-props', 'test')
 
     const name = cookie.get('name')
 

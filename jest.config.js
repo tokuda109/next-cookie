@@ -1,10 +1,10 @@
 
 module.exports = {
-  moduleFileExtensions: ["ts", "js"],
+  moduleFileExtensions: ["ts", "tsx", "js"],
   testMatch: [
-    "<rootDir>/test/**/*.spec.ts"
+    "<rootDir>/test/**/*.spec.(ts|tsx)"
   ],
   transform: {
-    "^.+\\.ts$": "ts-jest"
+    "^.+\\.(ts|tsx)$": "ts-jest"
   }
 }

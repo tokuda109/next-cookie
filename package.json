@@ -1,12 +1,12 @@
 {
   "name": "next-cookie",
   "version": "0.0.1",
-  "description": "",
+  "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
   "homepage": "https://github.com/tokuda109/next-cookie",
   "main": "dist/next-cookie.js",
-  "typings": "dist/main.d.ts",
+  "types": "dist/next-cookie.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:tokuda109/next-cookie.git"
@@ -17,6 +17,7 @@
   "author": "Tsuyoshi Tokuda <tsuyoshi@tokuda.me>",
   "keywords": [
     "next",
+    "react",
     "cookie"
   ],
   "scripts": {
@@ -26,24 +27,29 @@
     "test": "jest --config jest.config.js --runInBand"
   },
   "dependencies": {
-    "hoist-non-react-statics": "^3.3.0",
     "next": ">7.0.0",
     "universal-cookie": "^3.1.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.0",
     "@types/cookie": "^0.3.2",
-    "@types/hoist-non-react-statics": "^3.3.0",
+    "@types/enzyme": "^3.9.0",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.0",
-    "@types/next": "^8.0.0",
+    "@types/next": "^7.0.0",
     "@types/react": "^16.8.0",
     "@types/react-dom": "^16.8.0",
     "@types/universal-cookie": "^2.2.0",
     "chai": "^4.2.0",
+    "chai-enzyme": "1.0.0-beta.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.0",
     "jest": "^24.7.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "rollup": "^1.1.0",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-dts": "^0.15.0",
     "rollup-plugin-node-resolve": "^4.2.0",
     "rollup-plugin-typescript2": "^0.20.0",
     "sinon": "^7.3.0",

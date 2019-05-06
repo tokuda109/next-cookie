@@ -1,3 +1,3 @@
 
 export { Cookie } from './Cookie'
-export { withCookie } from './withCookie'
+export { WithCookieProps, withCookie } from './withCookie'

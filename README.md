@@ -1,6 +1,18 @@
 # next-cookie
 
+Cookie serializer and deserializer library for [next.js](https://nextjs.org/).
+
+[![npm](https://nodei.co/npm/next-cookie.png?downloads=true&stars=true)](https://nodei.co/npm/next-cookie)
+
+## Installation
+
+```
+$ npm install next-cookie
+```
+
 ## Usage
+
+The cookies are read and write through `ctx.cookie` or `this.props.cookie` as follows:
 
 ```
 import { Cookie, withCookie } from 'next-cookie'
@@ -53,3 +65,8 @@ class IndexPage extends React.Component<{}, State> {
 
 export default withCookie(IndexPage)
 ```
+
+## License
+
+`next-cookie` is licensed under MIT License.  
+See [LICENSE](https://github.com/tokuda109/next-cookie/blob/master/LICENSE) for more information.
