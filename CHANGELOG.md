@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 0.0.3
+
+Released on May 6, 2019.
+
+* Expose `WithCookieContext` interface
+
 ## 0.0.2
 
 Released on May 6, 2019.
