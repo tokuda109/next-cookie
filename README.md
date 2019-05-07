@@ -23,16 +23,8 @@ interface State = {
 
 class IndexPage extends React.Component<{}, State> {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {}
-  }
-
   static async getInitialProps(ctx) {
-    const cookie = new Cookie(ctx)
-
-    const name = cookie.get('name')
+    const name = ctx.cookie.get('name')
 
     let displayName
     if (name) {

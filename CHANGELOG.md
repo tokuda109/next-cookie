@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 0.0.4
+
+Released on May 7, 2019.
+
+* Update README sample
+
 ## 0.0.3
 
 Released on May 6, 2019.
