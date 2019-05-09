@@ -1,5 +1,5 @@
 
-import { Cookie, withCookie } from 'next-cookie'
+import { withCookie } from 'next-cookie'
 
 class IndexPage extends React.Component {
 
@@ -34,6 +34,10 @@ class IndexPage extends React.Component {
         <a onClick={ () => {
           cookie.set('name', name)
         } }>Store name to cookie</a>
+        <br />
+        <a onClick={ () => {
+          cookie.remove('name')
+        } }>Remove name</a>
       </div>
     )
   }

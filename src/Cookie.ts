@@ -37,10 +37,20 @@ class Cookie {
   }
 
   /**
+   * Returns true if the cookie value exists.
+   *
+   * @param name The name of the cookie.
+   * @returns True if it exists, false otherwise.
+   */
+  public has(name: string): boolean {
+    return typeof this.get(name) !== 'undefined'
+  }
+
+  /**
    * Get value of cookie.
    *
-   * @param name  Cookie name.
-   * @returns  The cookie value or null if not found.
+   * @param name The name of the cookie.
+   * @returns The cookie value or null if not found.
    */
   public get(name: string): any {
     return this.cookie.get(name)
@@ -49,9 +59,9 @@ class Cookie {
   /**
    * Set a cookie.
    *
-   * @param name  Cookie name
-   * @param value  The cookie's value.
-   * @param options
+   * @param name The name of the cookie.
+   * @param value The value of the cookie.
+   * @param options `CookieSetOptions` used in `universal-cookie`.
    */
   public set(name: string, value: any, options?: CookieSetOptions): void {
     if (this.isServer) {
@@ -64,7 +74,40 @@ class Cookie {
         ),
       )
     } else {
-      this.cookie.set(name, value, options)
+      this.cookie.set(name, value, options as CookieSetOptions)
+    }
+  }
+
+  /**
+   * Remove a cookie by name.
+   *
+   * @param name The name of the cookie.
+   * @param options `CookieSetOptions` used in `universal-cookie`.
+   */
+  public remove(name: string, options?: CookieSetOptions): void {
+    if (!this.has(name)) {
+      return
+    }
+
+    const opt = Object.assign(
+      {
+        expires: new Date(),
+        path: '/',
+      },
+      options || {},
+    )
+
+    if (this.isServer) {
+      this.ctx.res.setHeader(
+        'Set-Cookie',
+        parser.serialize(
+          name,
+          '',
+          opt as parser.CookieSerializeOptions,
+        ),
+      )
+    } else {
+      this.cookie.remove(name, opt as CookieSetOptions)
     }
   }
 }

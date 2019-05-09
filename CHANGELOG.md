@@ -1,5 +1,12 @@
 This is intended as an overview of the major changes.
 
+## 0.1.0
+
+Released on May 9, 2019.
+
+* Implemented `has` method and `remove` method in `Cookie` class
+* Minify files in distribution
+
 ## 0.0.4
 
 Released on May 7, 2019.
