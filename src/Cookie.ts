@@ -2,7 +2,7 @@
 
 import * as parser from 'cookie'
 import { NextContext } from 'next'
-import universalCookie, { CookieSetOptions } from 'universal-cookie'
+import universalCookie, { CookieGetOptions, CookieSetOptions } from 'universal-cookie'
 
 class Cookie {
 
@@ -50,10 +50,22 @@ class Cookie {
    * Get value of cookie.
    *
    * @param name The name of the cookie.
+   * @param options `CookieGetOptions` used in `universal-cookie`.
    * @returns The cookie value or null if not found.
    */
-  public get(name: string): any {
-    return this.cookie.get(name)
+  public get(name: string, options?: CookieGetOptions): any {
+    return this.cookie.get(name, options)
+  }
+
+  /**
+   * Get all cookies.
+   *
+   * @param options `CookieGetOptions` used in `universal-cookie`.
+   */
+  public getAll(options?: CookieGetOptions): {
+    [name: string]: any;
+  } {
+    return this.cookie.getAll(options)
   }
 
   /**

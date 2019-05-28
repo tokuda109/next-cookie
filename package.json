@@ -1,6 +1,6 @@
 {
   "name": "next-cookie",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -14,11 +14,13 @@
   "bugs": {
     "url": "https://github.com/tokuda109/next-cookie/issues"
   },
-  "author": "Tsuyoshi Tokuda <tsuyoshi@tokuda.me>",
+  "author": "Tsuyoshi Tokuda <tokuda109@gmail.com>",
   "keywords": [
     "next",
     "react",
-    "cookie"
+    "cookie",
+    "isomophic",
+    "universal"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.js",

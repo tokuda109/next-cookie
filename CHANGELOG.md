@@ -1,5 +1,12 @@
 This is intended as an overview of the major changes.
 
+## 0.2.0
+
+Released on May 28, 2019.
+
+* `Cookie.getAll` support.
+* Use CircleCI for unittest and lint.
+
 ## 0.1.0
 
 Released on May 9, 2019.
