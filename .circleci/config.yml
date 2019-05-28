@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          command: |
+            sudo npm install -g npm@latest
+            npm install
+      - run:
+          name: lint sources
+          command: npm run lint
+      - run:
+          name: run unittests with coverage
+          command: npm run test
+
+workflows:
+  per-commit:
+    jobs:
+      - test
