@@ -1,5 +1,13 @@
 This is intended as an overview of the major changes.
 
+## 0.3.0
+
+Released on July 13, 2019.
+
+* Refactor example.
+* Update test case.
+* Update Next.js version.
+
 ## 0.2.0
 
 Released on May 28, 2019.

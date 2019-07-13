@@ -2,10 +2,18 @@
 
 import { expect } from 'chai'
 import { configure, mount } from 'enzyme'
-import { NextContext } from 'next'
-import * as React from 'react'
+import { JSDOM } from 'jsdom'
+import React from 'react'
 
 import { WithCookieProps, withCookie } from '../src/withCookie'
+
+const dom = new JSDOM('<!doctype html><html><body></body></html>')
+
+global['window'] = dom.window
+global['document'] = dom.window.document
+global['navigator'] = {
+  userAgent: 'node.js'
+}
 
 const Adapter: any = require('enzyme-adapter-react-16')
 
@@ -21,6 +29,8 @@ class TestComponent extends React.Component<WithCookieProps> {
         <p>{ cookie.get('test') }</p>
         <a onClick={ () => {
           cookie.set('test', 'value')
+
+          this.forceUpdate()
         } }>Click</a>
       </React.Fragment>
     )
@@ -38,8 +48,6 @@ describe('withCookie.tsx', () => {
     expect(wrapper.find('p').text()).to.eql('')
 
     wrapper.find('a').simulate('click')
-
-    wrapper = mount(<Component />)
 
     expect(wrapper.find(TestComponent).length).to.eql(1)
     expect(wrapper.find('p').text()).to.eql('value')
