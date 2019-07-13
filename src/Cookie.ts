@@ -4,6 +4,8 @@ import * as parser from 'cookie'
 import { NextContext } from 'next'
 import universalCookie, { CookieGetOptions, CookieSetOptions } from 'universal-cookie'
 
+const SET_COOKIE_HEADER = 'Set-Cookie'
+
 class Cookie {
 
   ctx?: NextContext
@@ -13,18 +15,9 @@ class Cookie {
   isServer: boolean
 
   constructor(ctxOrCookie?: NextContext | string) {
-    if (typeof navigator !== 'undefined') {
-      this.isServer = false
+    this.isServer = typeof window !== 'undefined'
 
-      let cookieString
-      if (typeof ctxOrCookie === 'string') {
-        cookieString = ctxOrCookie
-      }
-
-      this.cookie = new universalCookie(cookieString)
-    } else {
-      this.isServer = true
-
+    if (this.isServer) {
       if (typeof ctxOrCookie === 'string') {
         this.cookie = new universalCookie(ctxOrCookie as string)
       } else if (ctxOrCookie && typeof ctxOrCookie.req !== 'undefined') {
@@ -33,6 +26,13 @@ class Cookie {
       } else {
         this.cookie = new universalCookie()
       }
+    } else {
+      let cookieString
+      if (typeof ctxOrCookie === 'string') {
+        cookieString = ctxOrCookie
+      }
+
+      this.cookie = new universalCookie(cookieString)
     }
   }
 
@@ -76,9 +76,9 @@ class Cookie {
    * @param options `CookieSetOptions` used in `universal-cookie`.
    */
   public set(name: string, value: any, options?: CookieSetOptions): void {
-    if (this.isServer) {
+    if (this.isServer && this.ctx) {
       this.ctx.res.setHeader(
-        'Set-Cookie',
+        SET_COOKIE_HEADER,
         parser.serialize(
           name,
           value,
@@ -111,7 +111,7 @@ class Cookie {
 
     if (this.isServer) {
       this.ctx.res.setHeader(
-        'Set-Cookie',
+        SET_COOKIE_HEADER,
         parser.serialize(
           name,
           '',

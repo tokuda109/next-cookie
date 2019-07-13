@@ -3,7 +3,7 @@
 import { expect } from 'chai'
 import { configure, mount } from 'enzyme'
 import { NextContext } from 'next'
-import * as React from 'react'
+import React from 'react'
 
 import { WithCookieProps, withCookie } from '../src/withCookie'
 
@@ -13,6 +13,10 @@ configure({ adapter: new Adapter() })
 
 class TestComponent extends React.Component<WithCookieProps> {
 
+  static async getInitialProps(ctx) {
+    return {}
+  }
+
   render() {
     const { cookie } = this.props
 
@@ -21,6 +25,8 @@ class TestComponent extends React.Component<WithCookieProps> {
         <p>{ cookie.get('test') }</p>
         <a onClick={ () => {
           cookie.set('test', 'value')
+
+          this.forceUpdate()
         } }>Click</a>
       </React.Fragment>
     )
@@ -38,8 +44,6 @@ describe('withCookie.tsx', () => {
     expect(wrapper.find('p').text()).to.eql('')
 
     wrapper.find('a').simulate('click')
-
-    wrapper = mount(<Component />)
 
     expect(wrapper.find(TestComponent).length).to.eql(1)
     expect(wrapper.find('p').text()).to.eql('value')
