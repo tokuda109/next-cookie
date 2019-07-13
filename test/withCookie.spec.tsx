@@ -2,20 +2,24 @@
 
 import { expect } from 'chai'
 import { configure, mount } from 'enzyme'
-import { NextContext } from 'next'
+import { JSDOM } from 'jsdom'
 import React from 'react'
 
 import { WithCookieProps, withCookie } from '../src/withCookie'
+
+const dom = new JSDOM('<!doctype html><html><body></body></html>')
+
+global['window'] = dom.window
+global['document'] = dom.window.document
+global['navigator'] = {
+  userAgent: 'node.js'
+}
 
 const Adapter: any = require('enzyme-adapter-react-16')
 
 configure({ adapter: new Adapter() })
 
 class TestComponent extends React.Component<WithCookieProps> {
-
-  static async getInitialProps(ctx) {
-    return {}
-  }
 
   render() {
     const { cookie } = this.props

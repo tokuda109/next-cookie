@@ -15,7 +15,7 @@ class Cookie {
   isServer: boolean
 
   constructor(ctxOrCookie?: NextContext | string) {
-    this.isServer = typeof window !== 'undefined'
+    this.isServer = typeof window === 'undefined'
 
     if (this.isServer) {
       if (typeof ctxOrCookie === 'string') {
@@ -109,7 +109,7 @@ class Cookie {
       options || {},
     )
 
-    if (this.isServer) {
+    if (this.isServer && this.ctx) {
       this.ctx.res.setHeader(
         SET_COOKIE_HEADER,
         parser.serialize(

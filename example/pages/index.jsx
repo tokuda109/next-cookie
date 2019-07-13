@@ -16,6 +16,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    this.forceUpdate()
   }
 
   render() {
@@ -42,16 +43,23 @@ class IndexPage extends React.Component {
             type="text"
             name="key"
             placeholder="Cookie key"
+            ref="storeKeyInput"
             onChange={ e => this.setState({ storeKey: e.target.value }) } />
           <input
             type="text"
             name="val"
             placeholder="Cookie value"
+            ref="storeValInput"
             onChange={ e => this.setState({ storeVal: e.target.value }) } />
 
           <button onClick={ () => {
             if (storeKey && storeVal) {
               cookie.set(storeKey, storeVal)
+
+              this.refs.storeKeyInput.value = ""
+              this.refs.storeValInput.value = ""
+
+              this.forceUpdate()
             }
           } }>Store</button>
         </section>
@@ -63,18 +71,23 @@ class IndexPage extends React.Component {
             type="text"
             name="key"
             placeholder="Cookie key"
+            ref="removeKeyInput"
             onChange={ e => this.setState({ removeKey: e.target.value }) } />
 
           <button onClick={ () => {
             if (removeKey) {
               cookie.remove(removeKey)
+
+              this.refs.removeKeyInput.value = ""
+
+              this.forceUpdate()
             }
           } }>Delete</button>
         </section>
 
         <section className="section">
-        <p className="section__text">Cookie result:</p>
-          <textarea value={(() => text)()} rows={10} readOnly onChange={() => {}}></textarea>
+          <p className="section__text">Cookie result:</p>
+          <textarea value={text} rows={10} readOnly onChange={() => {}}></textarea>
         </section>
       </div>
     )

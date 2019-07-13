@@ -3,6 +3,8 @@
   background-color: #f1f1f1;
   border: solid 1px #eee;
   border-radius: 4px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .section {

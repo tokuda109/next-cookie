@@ -9,8 +9,6 @@ describe('Cookie.ts', () => {
 
   describe('works properly when executing a constructor', () => {
     it('read a cookie string', () => {
-      document.cookie = ''
-
       const c = new Cookie('testKey=testValue')
 
       expect(c.has('testKey')).to.be.true
@@ -18,8 +16,6 @@ describe('Cookie.ts', () => {
     })
 
     it('read a NextContext', () => {
-      global['window'] = {}
-
       const dummyNextContext = {
         req: {
           headers: {

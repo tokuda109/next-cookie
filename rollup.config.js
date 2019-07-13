@@ -3,7 +3,7 @@
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
-import { dts } from 'rollup-plugin-dts'
+import dts from 'rollup-plugin-dts'
 import { uglify } from 'rollup-plugin-uglify'
 
 module.exports = [
@@ -20,7 +20,6 @@ module.exports = [
       'react-dom',
       'universal-cookie'
     ],
-    jsnext: true,
     plugins: [
       resolve(),
       commonjs(),
