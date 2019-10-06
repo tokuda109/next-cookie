@@ -1,5 +1,7 @@
 # next-cookie
 
+:warning: Version 2 of this library will work only with Next.js 9. If you're using Next.js 6-8 you can use previous versions. :warning:
+
 Cookie serializer and deserializer library for [next.js](https://nextjs.org/).
 
 > This package is under development and API might change before v1 is released.
