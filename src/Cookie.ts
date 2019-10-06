@@ -53,7 +53,7 @@ class Cookie {
    * @param options `CookieGetOptions` used in `universal-cookie`.
    * @returns The cookie value or null if not found.
    */
-  public get(name: string, options?: CookieGetOptions): any {
+  public get<T>(name: string, options?: CookieGetOptions): T {
     return this.cookie.get(name, options)
   }
 
@@ -62,11 +62,13 @@ class Cookie {
    *
    * @param options `CookieGetOptions` used in `universal-cookie`.
    */
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public getAll(options?: CookieGetOptions): {
-    [name: string]: any;
+    [name: string]: any,
   } {
     return this.cookie.getAll(options)
   }
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 
   /**
    * Set a cookie.
@@ -75,6 +77,7 @@ class Cookie {
    * @param value The value of the cookie.
    * @param options `CookieSetOptions` used in `universal-cookie`.
    */
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   public set(name: string, value: any, options?: CookieSetOptions): void {
     if (this.isServer && this.ctx) {
       this.ctx.res.setHeader(
@@ -89,6 +92,7 @@ class Cookie {
       this.cookie.set(name, value, options as CookieSetOptions)
     }
   }
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 
   /**
    * Remove a cookie by name.

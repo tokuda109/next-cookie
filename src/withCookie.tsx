@@ -6,11 +6,11 @@ import * as React from 'react'
 import { Cookie } from './Cookie'
 
 export interface WithCookieProps {
-  cookie?: Cookie
+  cookie?: Cookie,
 }
 
 export interface WithCookieContext extends NextContext {
-  cookie?: Cookie
+  cookie?: Cookie,
 }
 
 export function withCookie<Props extends WithCookieProps, InitialProps extends {}>(

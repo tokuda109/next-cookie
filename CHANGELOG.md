@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 1.0.0
+
+Released on October 6, 2019.
+
+* Switch the linter from TSLint to ESLint
+
 ## 0.3.0
 
 Released on July 13, 2019.

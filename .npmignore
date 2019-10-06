@@ -2,6 +2,8 @@
 .circleci
 .rpt2_cache
 .editorconfig
+.eslintignore
+.eslintrc
 .github
 .gitignore
 
@@ -15,4 +17,3 @@ README.md
 jest.config.js
 rollup.config.js
 tsconfig.json
-tslint.json
