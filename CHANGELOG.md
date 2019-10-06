@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.0.0
+
+Released on October 6, 2019.
+
+* Fix for Next.js 9
+
 ## 1.0.0
 
 Released on October 6, 2019.

@@ -1,6 +1,6 @@
 {
   "name": "next-cookie",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -28,7 +28,7 @@
     "test": "jest --config jest.config.js --runInBand"
   },
   "dependencies": {
-    "next": "^8.1.0",
+    "next": ">9.0.0",
     "universal-cookie": "^4.0.2"
   },
   "devDependencies": {
