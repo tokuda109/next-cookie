@@ -1,6 +1,4 @@
-/* tslint:disable: variable-name */
-
-import { NextComponentType, NextContext } from 'next'
+import { NextComponentType, NextPageContext } from 'next'
 import * as React from 'react'
 
 import { Cookie } from './Cookie'
@@ -9,13 +7,13 @@ export interface WithCookieProps {
   cookie?: Cookie,
 }
 
-export interface WithCookieContext extends NextContext {
+export interface WithCookieContext extends NextPageContext {
   cookie?: Cookie,
 }
 
 export function withCookie<Props extends WithCookieProps, InitialProps extends {}>(
-  ComposedComponent: NextComponentType<Props, InitialProps>
-): NextComponentType<Props, InitialProps> {
+  ComposedComponent: NextComponentType<WithCookieContext, InitialProps, Props>
+): NextComponentType<WithCookieContext, InitialProps, Props> {
 
   const name: string = ComposedComponent.displayName || ComposedComponent.name
 

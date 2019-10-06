@@ -1,7 +1,5 @@
-/* tslint:disable */
-
 import { expect } from 'chai'
-import { NextContext } from 'next'
+import { NextPageContext } from 'next'
 
 import { Cookie } from '../src/Cookie'
 
@@ -24,7 +22,7 @@ describe('Cookie.ts', () => {
         }
       }
 
-      const c = new Cookie(dummyNextContext as NextContext)
+      const c = new Cookie(dummyNextContext as NextPageContext)
 
       expect(c.has('testKey')).to.be.true
       expect(c.get('testKey')).to.eql('testValue')

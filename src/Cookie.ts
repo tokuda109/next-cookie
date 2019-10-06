@@ -1,27 +1,25 @@
-/* tslint:disable: variable-name */
-
 import * as parser from 'cookie'
-import { NextContext } from 'next'
+import { NextPageContext } from 'next'
 import universalCookie, { CookieGetOptions, CookieSetOptions } from 'universal-cookie'
 
 const SET_COOKIE_HEADER = 'Set-Cookie'
 
 class Cookie {
 
-  ctx?: NextContext
+  ctx?: NextPageContext
 
   cookie: universalCookie
 
   isServer: boolean
 
-  constructor(ctxOrCookie?: NextContext | string) {
+  constructor(ctxOrCookie?: NextPageContext | string) {
     this.isServer = typeof window === 'undefined'
 
     if (this.isServer) {
       if (typeof ctxOrCookie === 'string') {
         this.cookie = new universalCookie(ctxOrCookie as string)
       } else if (ctxOrCookie && typeof ctxOrCookie.req !== 'undefined') {
-        this.ctx = ctxOrCookie as NextContext
+        this.ctx = ctxOrCookie as NextPageContext
         this.cookie = new universalCookie(this.ctx.req.headers.cookie)
       } else {
         this.cookie = new universalCookie()
