@@ -16,7 +16,7 @@ $ npm install next-cookie
 
 The cookies are read and write through `ctx.cookie` or `this.props.cookie` as follows:
 
-```
+```tsx
 import { Cookie, withCookie } from 'next-cookie'
 
 interface State = {
