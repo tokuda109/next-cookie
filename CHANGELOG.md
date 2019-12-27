@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.1.2
+
+Released on December 27, 2019.
+
+* Security update
+
 ## 2.1.1
 
 Released on December 27, 2019.
