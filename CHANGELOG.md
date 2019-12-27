@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.1.1
+
+Released on December 27, 2019.
+
+* Version 2.1.0 mirror (npm publish failed)
+
 ## 2.1.0
 
 Released on December 27, 2019.
