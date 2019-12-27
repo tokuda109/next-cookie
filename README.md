@@ -2,8 +2,6 @@
 
 Cookie serializer and deserializer library for [next.js](https://nextjs.org/).
 
-> This package is under development and API might change before v1 is released.
-
 [![npm](https://nodei.co/npm/next-cookie.png?downloads=true&stars=true)](https://nodei.co/npm/next-cookie)
 
 ## Installation
