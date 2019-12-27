@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.1.0
+
+Released on December 27, 2019.
+
+* Enable multiple `Set-Cookie` headers #4
+
 ## 2.0.0
 
 Released on October 6, 2019.
