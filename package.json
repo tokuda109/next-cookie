@@ -1,6 +1,6 @@
 {
   "name": "next-cookie",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -60,7 +60,7 @@
     "rollup-plugin-dts": "^1.1.10",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
-    "rollup-plugin-uglify": "^6.0.3",
+    "rollup-plugin-uglify": "^6.0.4",
     "sinon": "^7.5.0",
     "ts-jest": "^24.1.0",
     "tslib": "^1.10.0",
