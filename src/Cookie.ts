@@ -78,7 +78,7 @@ class Cookie {
   /* eslint-disable @typescript-eslint/no-explicit-any */
   public set(name: string, value: any, options?: CookieSetOptions): void {
     if (this.isServer && this.ctx) {
-      let cookies: string[] = this.ctx.res.getHeader(SET_COOKIE_HEADER) as string[] || []
+      const cookies: string[] = this.ctx.res.getHeader(SET_COOKIE_HEADER) as string[] || []
 
       this.cookie.set(name, value, options as CookieSetOptions)
       cookies.push(parser.serialize(name, value, options as parser.CookieSerializeOptions))
