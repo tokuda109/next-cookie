@@ -77,6 +77,11 @@ class Cookie {
    */
   /* eslint-disable @typescript-eslint/no-explicit-any */
   public set(name: string, value: any, options?: CookieSetOptions): void {
+    // if the expires is number, then convert to Date.
+    if (options && typeof options.expires === 'number') {
+      options.expires = new Date((new Date() as any) * 1 + options.expires * 864e+5);
+    }
+
     if (this.isServer && this.ctx) {
       const cookies: string[] = this.ctx.res.getHeader(SET_COOKIE_HEADER) as string[] || []
 
