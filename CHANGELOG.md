@@ -1,5 +1,12 @@
 This is intended as an overview of the major changes.
 
+## 2.2.0
+
+Released on March 11, 2020.
+
+* Some dependencies update
+* Convert to Date type when passing a number to expires with set function by @keiches
+
 ## 2.1.3
 
 Released on February 1, 2020.
