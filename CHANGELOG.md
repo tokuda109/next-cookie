@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.2.1
+
+Released on March 14, 2020.
+
+* Security update [#78](https://github.com/tokuda109/next-cookie/pull/78)
+
 ## 2.2.0
 
 Released on March 11, 2020.
