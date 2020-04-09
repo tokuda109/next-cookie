@@ -28,6 +28,7 @@
     "test": "jest --config jest.config.js --runInBand"
   },
   "dependencies": {
+    "minimist": ">=1.2.5",
     "next": ">9.3.0",
     "universal-cookie": "4.0.3"
   },
