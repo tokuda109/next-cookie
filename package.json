@@ -1,6 +1,6 @@
 {
   "name": "next-cookie",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Cookie serializer and deserializer library for next.js.",
   "license": "MIT",
   "readmeFilename": "README.md",
