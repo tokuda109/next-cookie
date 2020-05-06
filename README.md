@@ -1,7 +1,5 @@
 # next-cookie
 
-:warning: Version 2 of this library will work only with Next.js 9. If you're using Next.js 6-8 you can use previous versions. :warning:
-
 Cookie serializer and deserializer library for [next.js](https://nextjs.org/).
 
 [![npm](https://nodei.co/npm/next-cookie.png?downloads=true&stars=true)](https://nodei.co/npm/next-cookie)
@@ -13,6 +11,8 @@ $ npm install next-cookie
 ```
 
 ## Usage
+
+### HOCs
 
 The cookies are read and write through `ctx.cookie` or `this.props.cookie` as follows:
 
@@ -58,6 +58,61 @@ class IndexPage extends React.Component<{}, State> {
 }
 
 export default withCookie(IndexPage)
+```
+
+### Hooks
+
+The `useCookie` returns `cookie` instance.
+
+```tsx
+import { useCookie } from 'next-cookie'
+import React, { useState } from 'react'
+
+export default props => {
+  const cookie = useCookie(props.cookie)
+  const [name, setName] = useState(cookie.get('name') || '')
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    cookie.set('name', name)
+
+    setName('')
+  }
+
+  const onChangeInput = (e) => {
+    setName(e.target.value)
+  }
+
+  return (
+    <div>
+      { cookie.has('name') ? (
+      <p>Display name: { cookie.get('name') }</p>
+      ) : (
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={onChangeInput} />
+        <button type="submit">Store name to cookie</button>
+      </form>
+      ) }
+    </div>
+  )
+}
+
+export function getServerSideProps(context) {
+  const cookie = useCookie(context)
+
+  cookie.set('getServerSideProps', 'This value is set by getServerSideProps.')
+
+  return {
+    props: {
+      cookie: context.req.headers.cookie || ''
+    }
+  }
+}
 ```
 
 ## License
