@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.3.0
+
+Released on May 6, 2020.
+
+* Add useCookie hook [#116](https://github.com/tokuda109/next-cookie/pull/116)
+
 ## 2.2.3
 
 Released on May 6, 2020.
