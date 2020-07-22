@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.4.0
+
+Released on July 23, 2020.
+
+* Fix a `getInitialProps` error when using `getServerSideProps`
+
 ## 2.3.1
 
 Released on July 22, 2020.
