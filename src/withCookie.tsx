@@ -33,20 +33,18 @@ export function withCookie<Props extends WithCookieProps, InitialProps extends {
     }
   }
 
-  WithCookieWrapper.getInitialProps = async (ctx: WithCookieContext): Promise<InitialProps> => {
-    let initialProps = {}
-
-    if (ComposedComponent.getInitialProps) {
+  if (ComposedComponent.getInitialProps) {
+    WithCookieWrapper.getInitialProps = async (ctx: WithCookieContext): Promise<InitialProps> => {
       ctx.cookie = new Cookie(ctx)
 
-      initialProps = await ComposedComponent.getInitialProps(ctx)
+      const initialProps = await ComposedComponent.getInitialProps(ctx)
 
       if (ctx.cookie) {
         delete ctx.cookie
       }
-    }
 
-    return initialProps as InitialProps
+      return initialProps as InitialProps
+    }
   }
 
   return WithCookieWrapper
