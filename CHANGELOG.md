@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.4.1
+
+Released on August 4, 2020.
+
+* Some dependencies update
+
 ## 2.4.0
 
 Released on July 23, 2020.
