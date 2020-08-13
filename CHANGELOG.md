@@ -1,5 +1,12 @@
 This is intended as an overview of the major changes.
 
+## 2.4.2
+
+Released on August 13, 2020.
+
+* Security update serialize-javascript
+* Some dependencies update
+
 ## 2.4.1
 
 Released on August 4, 2020.
