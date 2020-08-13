@@ -62,7 +62,7 @@
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-typescript2": "0.27.1",
     "rollup-plugin-uglify": "6.0.4",
-    "sinon": "9.0.2",
+    "sinon": "9.0.3",
     "ts-jest": "25.5.1",
     "tslib": "2.0.0",
     "typescript": "3.9.7"
