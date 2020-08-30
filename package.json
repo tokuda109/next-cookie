@@ -53,7 +53,7 @@
     "eslint-plugin-react": "7.20.6",
     "jest": "25.5.4",
     "jsdom": "16.4.0",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rollup": "1.32.1",
