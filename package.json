@@ -38,7 +38,7 @@
     "@types/cookie": "0.4.0",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6",
-    "@types/jest": "26.0.9",
+    "@types/jest": "26.0.10",
     "@types/jsdom": "16.2.3",
     "@types/react": "16.9.48",
     "@types/react-dom": "16.9.8",
