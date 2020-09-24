@@ -31,7 +31,7 @@
     "kind-of": ">=6.0.3",
     "minimist": ">=1.2.5",
     "next": ">9.3.0",
-    "universal-cookie": "4.0.3"
+    "universal-cookie": "4.0.4"
   },
   "devDependencies": {
     "@types/chai": "4.2.12",
