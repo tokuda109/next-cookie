@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.4.3
+
+Released on October 26, 2020.
+
+* Security update node-fetch, object-path
+
 ## 2.4.2
 
 Released on August 13, 2020.
