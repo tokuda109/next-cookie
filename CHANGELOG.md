@@ -1,10 +1,17 @@
 This is intended as an overview of the major changes.
 
+## 2.4.4
+
+Released on January 02, 2021.
+
+* Security update `node-notifier`
+* Some dependencies update
+
 ## 2.4.3
 
 Released on October 26, 2020.
 
-* Security update node-fetch, object-path
+* Security update `node-fetch`, `object-path`
 
 ## 2.4.2
 
