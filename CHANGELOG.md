@@ -1,6 +1,6 @@
 This is intended as an overview of the major changes.
 
-## 2.5.2
+## 2.6.0
 
 Released on January 02, 2021.
 
