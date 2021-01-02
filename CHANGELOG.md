@@ -1,5 +1,11 @@
 This is intended as an overview of the major changes.
 
+## 2.5.2
+
+Released on January 02, 2021.
+
+* Can be pass GetServerSidePropsContext on server-side [#224](https://github.com/tokuda109/next-cookie/pull/224)
+
 ## 2.5.1
 
 Released on January 02, 2021.
