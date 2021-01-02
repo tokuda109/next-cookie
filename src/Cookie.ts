@@ -1,5 +1,5 @@
 import * as parser from 'cookie'
-import { NextPageContext } from 'next'
+import { NextPageContext, GetServerSidePropsContext } from 'next'
 import universalCookie, { CookieGetOptions, CookieSetOptions } from 'universal-cookie'
 
 const SET_COOKIE_HEADER = 'Set-Cookie'
@@ -12,7 +12,7 @@ class Cookie {
 
   isServer: boolean
 
-  constructor(ctxOrCookie?: NextPageContext | string) {
+  constructor(ctxOrCookie?: NextPageContext | GetServerSidePropsContext | string) {
     this.isServer = typeof window === 'undefined'
 
     if (this.isServer) {

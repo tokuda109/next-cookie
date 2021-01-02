@@ -1,6 +1,6 @@
 This is intended as an overview of the major changes.
 
-## 2.4.4
+## 2.5.1
 
 Released on January 02, 2021.
 

@@ -30,7 +30,7 @@
   "dependencies": {
     "kind-of": ">=6.0.3",
     "minimist": ">=1.2.5",
-    "next": ">9.3.0",
+    "next": ">9.5.0",
     "node-fetch": ">=2.6.1",
     "object-path": ">=0.11.5",
     "universal-cookie": "4.0.4"
