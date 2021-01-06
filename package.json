@@ -68,7 +68,7 @@
     "serialize-javascript": "5.0.1",
     "sinon": "9.2.2",
     "ts-jest": "25.5.1",
-    "tslib": "2.0.3",
+    "tslib": "2.1.0",
     "typescript": "3.9.7"
   }
 }
